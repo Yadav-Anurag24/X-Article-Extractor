@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "X Article Extractor",
+  "version": "1.0",
+  "description": "Extracts readable articles from X (Twitter) threads.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "src/popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://x.com/*", "*://twitter.com/*"],
+      "js": ["src/content/scraper.js"]
+    }
+  ]
+}
